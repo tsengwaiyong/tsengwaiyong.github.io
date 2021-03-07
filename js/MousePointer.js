@@ -10,12 +10,18 @@ $(document).mousemove(function(e) {
   });
 });
 
-card_m.mouseover(function(e) {
+card_m.mouseover(hovercard);
+card_l.mouseover(hovercard);
+
+
+function hovercard(e) {
   mouse.css("opacity", "0");
 
   $(e.target).mousemove(function(e) {
-    var offsetx = e.offsetX / 20 + 'px'
-    var offsety = e.offsetY / 20 + 'px'
+    var targetHalfWidth = $(e.target).innerWidth() / 2;
+    var targetHalfHeight = $(e.target).innerHeight() / 2;
+    var offsetx = -((targetHalfWidth - e.offsetX) / 20) + 'px';
+    var offsety = -((targetHalfHeight - e.offsetY) / 20) + 'px';
 
     $(e.target).css({
       "transform": "translate(" + offsetx + "," + offsety + ")"
@@ -25,17 +31,7 @@ card_m.mouseover(function(e) {
   $(e.target).mouseleave(function(e) {
     mouse.css("opacity", "1");
     $(e.target).css({
-      "transform": "translate(0px,0px)"
-
+      "transform": "translate(0px,0px)",
     });
   });
-});
-
-
-card_l.mouseover(function() {
-  mouse.css("opacity", "0");
-});
-
-card_l.mouseleave(function() {
-  mouse.css("opacity", "1");
-});
+}

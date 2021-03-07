@@ -49,32 +49,38 @@ body {
 }
 
 .leftbar {
-  padding: 60px 0 80px 140px;
+  /* padding: 60px 0 0 6vw; */
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: space-between;
   margin-right: 48px;
+  width: 10vw;
+  height: 100vh;
+  z-index: 2;
 }
 
 .leftbar svg {
-  transform: translateX(-100%);
+  padding: 0 0 60px 6vw;
+  transform: translateX(-50%);
   opacity: 0;
   animation: slide-left 1.5s forwards cubic-bezier(0.4, 0, 0.2, 1), fade-in 1.5s forwards;
 }
 
 .menu {
   position: relative;
-  padding: 0;
+  padding: 60px 0 0 6vw;
   display: flex;
   flex-direction: column;
 }
 
 .menu p {
+  font-weight: 300;
   position: relative;
   margin: 0 0 16px 0;
   transition: all 0.3s;
   padding: 16px 0;
-  color: #fff;
+  color: #000;
   mix-blend-mode: difference;
 }
 
@@ -85,7 +91,6 @@ body {
 
 .menu .index {
   font-size: 36px;
-  font-weight: bold;
 }
 
 .menu .index::after {
@@ -93,7 +98,7 @@ body {
   width: 2em;
   height: 8px;
   display: block;
-  background: #8c1cc1;
+  background: #73e33e;
   z-index: -1;
   position: absolute;
   top: 50%;
@@ -102,10 +107,11 @@ body {
 
 .rightbar {
   position: relative;
-  z-index: 2;
-  padding: 60px 140px 60px 4px;
-  display: flex;
+  padding: 0 6vw 0 0;
+  width: 100vw;
   overflow-y: scroll;
+  display: flex;
+  align-items: flex-end;
   flex-flow: column;
 }
 
@@ -124,15 +130,16 @@ body {
 .card-m, .card-l {
   width: 36vw;
   background: #EEE;
-  margin-bottom: 24px;
-  /* animation: slide-up 0.8s forwards, fade-in 0.8s; */
+  animation: slide-up 1s forwards, fade-in 0.8s forwards;
   box-sizing: border-box;
+  margin-top: 48px;
   box-shadow: 0 0 0 0 black;
   animation-delay: calc(var(--i) * 0.2s);
-  transition: box-shadow 0.3s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .card-m:hover, .card-l:hover {
@@ -142,7 +149,7 @@ body {
 .webtitle {
   position: fixed;
   top: 60px;
-  right: 140px;
+  right: 6vw;
   z-index: 999;
   font-size: 32px;
   font-weight: bold;
@@ -162,7 +169,7 @@ body {
 
 .workcontent {
   display: flex;
-  padding-top: 60px;
+  padding-top: 12vh;
 }
 
 .work-detail {
@@ -197,7 +204,7 @@ body {
 
 @keyframes slide-up {
   to {
-    transform: translateY(0);
+    margin-top: 24px;
   }
 }
 
