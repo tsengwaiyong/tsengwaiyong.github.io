@@ -1,5 +1,4 @@
-var card_m = $(".card-m");
-var card_l = $(".card-l");
+var hoverable = $(".hoverable");
 var mouse = $(".mousepointer");
 
 $(document).mousemove(function(e) {
@@ -10,18 +9,21 @@ $(document).mousemove(function(e) {
   });
 });
 
-card_m.mouseover(hovercard);
-card_l.mouseover(hovercard);
+hoverable.mouseover(hover);
 
 
-function hovercard(e) {
+function hover(e) {
   mouse.css("opacity", "0");
+  mouse.css("transform", "translateX(-50%) translateY(-50%) scale(0.1)");
+
+
+  $(e.target).css("box-shadow", "0 0 48px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2) inset");
 
   $(e.target).mousemove(function(e) {
     var targetHalfWidth = $(e.target).innerWidth() / 2;
     var targetHalfHeight = $(e.target).innerHeight() / 2;
-    var offsetx = -((targetHalfWidth - e.offsetX) / 20) + 'px';
-    var offsety = -((targetHalfHeight - e.offsetY) / 20) + 'px';
+    var offsetx = -((targetHalfWidth - e.offsetX) / 16) + 'px';
+    var offsety = -((targetHalfHeight - e.offsetY) / 16) + 'px';
 
     $(e.target).css({
       "transform": "translate(" + offsetx + "," + offsety + ")"
@@ -30,6 +32,9 @@ function hovercard(e) {
 
   $(e.target).mouseleave(function(e) {
     mouse.css("opacity", "1");
+    mouse.removeAttr("style", "transform");
+
+    $(e.target).css("box-shadow", "");
     $(e.target).css({
       "transform": "translate(0px,0px)",
     });

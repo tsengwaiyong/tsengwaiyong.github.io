@@ -142,7 +142,7 @@ body {
 }
 
 .card-m:hover, .card-l:hover {
-  box-shadow: 0 0 48px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2) inset;
+  /* box-shadow: 0 0 48px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2) inset; */
 }
 
 .webtitle {
