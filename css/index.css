@@ -133,7 +133,6 @@ body {
   animation: slide-up 1s forwards, fade-in 0.8s forwards;
   box-sizing: border-box;
   margin-top: 48px;
-  box-shadow: 0 0 0 0 black;
   animation-delay: calc(var(--i) * 0.2s);
   background-size: cover;
   background-position: center;
@@ -143,7 +142,7 @@ body {
 }
 
 .card-m:hover, .card-l:hover {
-  box-shadow: 0 0 0 4px black;
+  box-shadow: 0 0 48px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
 
 .webtitle {
