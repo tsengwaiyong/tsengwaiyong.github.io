@@ -10,7 +10,7 @@ body {
   display: none;
 }
 
-::selection {
+/* ::selection {
   background: #111;
 }
 
@@ -20,8 +20,7 @@ body {
 
 ::-webkit-selection {
   background: #111;
-}
-
+} */
 .ellipse1 {
   position: absolute;
   width: 475px;
@@ -34,12 +33,6 @@ body {
   filter: blur(120px);
 }
 
-/*
-.ellipse2 {
-  position: absolute;
-  right: -20px;
-  top: -100px;
-} */
 .content {
   width: 100%;
   height: 100%;
@@ -55,12 +48,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-right: 48px;
-  width: 10vw;
+  width: 160px;
   height: 100vh;
   z-index: 2;
 }
 
 .leftbar svg {
+  margin-left: 12px;
   padding: 0 0 60px 6vw;
   transform: translateX(-50%);
   opacity: 0;
@@ -70,23 +64,25 @@ body {
 .menu {
   position: relative;
   padding: 60px 0 0 6vw;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .menu p {
+  display: inline-block;
   font-weight: 300;
   position: relative;
-  margin: 0 0 16px 0;
+  margin: 0 0 36px 0;
   transition: all 0.3s;
-  padding: 16px 0;
+  padding: 8px 12px;
   color: #000;
   mix-blend-mode: difference;
+  border-radius: 4px;
 }
 
 .menu p:hover {
   cursor: pointer;
-  transform: translateX(4px);
+  background-color: #fff;
 }
 
 .menu .index {
@@ -120,7 +116,7 @@ body {
 }
 
 .card-m {
-  height: 26.6vw;
+  height: 27vw;
 }
 
 .card-l {
@@ -149,7 +145,7 @@ body {
   position: fixed;
   top: 60px;
   right: 6vw;
-  z-index: 999;
+  z-index: 99;
   font-size: 32px;
   font-weight: bold;
 }
@@ -176,7 +172,7 @@ body {
   background: #fff;
   height: 100vh;
   width: 100vw;
-  z-index: 999;
+  z-index: 998;
   top: 100vh;
   transition: top 0.6s ease-in-out;
 }
