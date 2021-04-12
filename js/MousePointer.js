@@ -17,7 +17,7 @@ function hover(e) {
   mouse.css("transform", "translateX(-50%) translateY(-50%) scale(0.1)");
 
 
-  $(e.target).css("box-shadow", "0 0 48px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(0, 0, 0, 0.2) inset");
+  $(e.target).css("box-shadow", "0 0 0 1px rgb(0, 0, 0, 0.1) inset,0 0 48px rgba(0, 0, 0, 0.2)");
 
   $(e.target).mousemove(function(e) {
     var targetHalfWidth = $(e.target).innerWidth() / 2;
