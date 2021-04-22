@@ -25,7 +25,7 @@
   :root {
     --fontcolor: #1f1f1f;
     --backgorund: #fff;
-    --cutline: #000;
+    --cutline: rgba(0, 0, 0, .1);
     --imagecontrast: 1;
     --boxshadow: rgba(0, 0, 0, 0.1);
     --textshadow: rgba(255, 255, 255, .1);
@@ -66,17 +66,17 @@ body {
   display: none;
 }
 
-/* ::selection {
-  background: #111;
+.webmaskup {
+  position: absolute;
+  top: -10%;
+  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: .1;
+  z-index: 999;
 }
 
-::-moz-selection {
-  background: #111;
-}
-
-::-webkit-selection {
-  background: #111;
-} */
 .ellipse1 {
   position: absolute;
   width: 475px;
@@ -137,7 +137,7 @@ body {
   display: inline-block;
   font-weight: 300;
   position: relative;
-  margin: 0 0 48px 0;
+  margin: 0 0 4vh 0;
   transition: all 0.3s;
   padding: 8px 12px;
   color: var(--fontcolor);
